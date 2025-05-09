@@ -19,17 +19,17 @@ Trendo is a modern, full-stack social media application where users can share po
 
 - React (with TypeScript)
 - Tailwind CSS
-- React Router (or TanStack Router)
-- Zustand / Redux / Context API (state management)
+- React Router DOM
+- React Hook Form
+- Zod
+- Zustand
 
 ### Backend:
 
-- Node.js + Express (or Firebase / Supabase if no custom backend)
-- MongoDB / PostgreSQL / Firebase Firestore
+- Supabase 
 
 ### Other Tools:
 
-- React Hook Form / Formik (for forms)
 - Framer Motion (animations)
-- Vercel / Netlify (deployment)
+- Vercel  (deployment)
 - Git & GitHub (version control)
