@@ -19,6 +19,7 @@ Trendo is a modern, full-stack social media application where users can share po
 
 - React (with TypeScript)
 - Tailwind CSS
+- Shadcn
 - React Router DOM
 - React Hook Form
 - Zod
