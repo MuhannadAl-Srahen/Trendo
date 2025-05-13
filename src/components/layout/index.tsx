@@ -3,12 +3,12 @@ import { Outlet } from 'react-router'
 
 function Layout() {
   return (
-    <div className='flex min-h-screen'>
+    <>
       <SideBar />
-      <main className='p flex-1 items-center justify-center'>
+      <main className='w-full p-6 md:ml-64'>
         <Outlet />
       </main>
-    </div>
+    </>
   )
 }
 

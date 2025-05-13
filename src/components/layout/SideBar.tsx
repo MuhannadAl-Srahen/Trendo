@@ -8,7 +8,7 @@ export default function Sidebar() {
   const location = useLocation()
 
   return (
-    <div className='border-sidebar flex h-screen w-64 flex-col border-r'>
+    <aside className='border-sidebar fixed hidden h-screen w-64 flex-col border-r md:flex'>
       {/* Logo */}
       <div className='flex items-center p-6'>
         <div className='from-secondary to-primary/90 flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br'>
@@ -76,6 +76,6 @@ export default function Sidebar() {
           Logout
         </a>
       </div>
-    </div>
+    </aside>
   )
 }
