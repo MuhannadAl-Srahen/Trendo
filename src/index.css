@@ -60,6 +60,7 @@
   --border: oklch(0.6 0.035 261);
   --input: oklch(0.8 0.025 261);
   --ring: oklch(0.6 0.012 210);
+  --radius: 0.5rem;
 }
 .light {
   --background: oklch(0.93 0.032 261);
