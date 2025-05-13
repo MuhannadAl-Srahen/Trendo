@@ -1,11 +1,11 @@
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import logo from '../../assets/sidebar_logo.svg'
 import { cn, navigation } from '@/lib/utils'
-import { useState } from 'react'
 import { LogOut } from 'lucide-react'
+import { Link, useLocation } from 'react-router'
 
 export default function Sidebar() {
-  const [activeItem, setActiveItem] = useState('Home')
+  const location = useLocation()
 
   return (
     <div className='border-sidebar flex h-screen w-64 flex-col border-r'>
@@ -35,12 +35,12 @@ export default function Sidebar() {
       {/* Navigation */}
       <nav className='mt-14 flex-1 space-y-2 px-3'>
         {navigation.map((item) => {
-          const isActive = activeItem === item.name
+          const isActive = location.pathname === item.href
+
           return (
-            <a
+            <Link
               key={item.name}
-              href={item.href}
-              onClick={() => setActiveItem(item.name)}
+              to={item.href}
               className={cn(
                 'group flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all',
                 isActive
@@ -58,7 +58,7 @@ export default function Sidebar() {
               {isActive && (
                 <div className='bg-primary ml-auto h-1.5 w-1.5 rounded-full' aria-hidden='true' />
               )}
-            </a>
+            </Link>
           )
         })}
       </nav>
