@@ -42,16 +42,19 @@ export default function Sidebar() {
               key={item.name}
               to={item.href}
               className={cn(
-                'group flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all',
-                isActive
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:bg-muted hover:text-foreground'
+                'group text-muted-foreground hover:bg-muted hover:text-foreground flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all',
+                {
+                  'bg-primary/10 text-primary': isActive,
+                }
               )}
             >
               <item.icon
                 className={cn(
-                  'mr-3 h-5 w-5 transition-colors',
-                  isActive ? 'text-primary' : 'text-muted-foreground group-hover:text-foreground'
+                  'text-muted-foreground group-hover:text-foreground mr-3 h-5 w-5 transition-colors',
+                  {
+                    'text-primary': isActive,
+                  }
+                
                 )}
               />
               {item.name}
