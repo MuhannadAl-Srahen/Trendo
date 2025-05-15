@@ -12,6 +12,8 @@ import SigninForm from './components/auth/SigninForm'
 export default function App() {
   return (
     <Routes>
+      <Route path='signin' element={<SigninForm />} />
+      <Route path='signup' element={<SignupForm />} />
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path='saved-post' element={<SavedPostPage />} />
@@ -20,8 +22,6 @@ export default function App() {
         <Route path='create-post' element={<CreatePostPage />} />
         <Route path='profile' element={<ProfilePage />} />
         <Route path='*' element={<div className='text-muted-foreground text-8xl'>404</div>} />
-        <Route path='signin' element={<SigninForm />} />
-        <Route path='signup' element={<SignupForm />} />
       </Route>
     </Routes>
   )
