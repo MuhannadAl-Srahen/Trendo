@@ -8,12 +8,17 @@ export default function Sidebar() {
   const location = useLocation()
   const navigate = useNavigate()
 
+  const profilePath = '/profile'
+
+  const navItemClasses =
+    'group text-muted-foreground hover:bg-muted hover:text-foreground flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all'
+
   return (
     <aside className='border-sidebar fixed hidden h-screen w-64 flex-col border-r md:flex'>
       {/* Logo */}
       <div className='flex cursor-pointer items-center p-6' onClick={() => navigate('/')}>
         <div className='from-secondary to-primary/90 flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br'>
-          <img src={logo} alt='a t letter' className='p-1.25' />
+          <img src={logo} alt='Trendo Logo' className='p-1.25' />
         </div>
         <span className='ml-3 text-lg font-medium tracking-tight'>trendo</span>
       </div>
@@ -23,7 +28,8 @@ export default function Sidebar() {
         <div className='flex items-center'>
           <Avatar
             className='border-primary h-12 w-12 cursor-pointer border-1'
-            onClick={() => navigate('/profile')}
+            onClick={() => navigate(profilePath)}
+            aria-label='User profile picture'
           >
             <AvatarFallback className='from-primary/20 to-primary/10 text-primary bg-gradient-to-br'>
               M
@@ -32,7 +38,7 @@ export default function Sidebar() {
           <div className='ml-3'>
             <p
               className='text-primary cursor-pointer font-medium'
-              onClick={() => navigate('/profile')}
+              onClick={() => navigate(profilePath)}
             >
               Muhannad
             </p>
@@ -50,12 +56,10 @@ export default function Sidebar() {
             <Link
               key={item.name}
               to={item.href}
-              className={cn(
-                'group text-muted-foreground hover:bg-muted hover:text-foreground flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all',
-                {
-                  'bg-primary/10 text-primary': isActive,
-                }
-              )}
+              className={cn(navItemClasses, {
+                'bg-primary/10 text-primary': isActive,
+              })}
+              aria-label={item.name}
             >
               <item.icon
                 className={cn(
@@ -74,16 +78,13 @@ export default function Sidebar() {
         })}
       </nav>
 
-      {/* Logout */}
+      {/* Profile + Logout */}
       <div className='flex flex-col gap-2 px-3 pb-6'>
         <Link
-          to='/profile'
-          className={cn(
-            'group text-muted-foreground hover:bg-muted hover:text-foreground flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all',
-            {
-              'bg-primary/10 text-primary': location.pathname === '/profile',
-            }
-          )}
+          to={profilePath}
+          className={cn(navItemClasses, {
+            'bg-primary/10 text-primary': location.pathname === profilePath,
+          })}
         >
           <User
             className={cn(
@@ -94,12 +95,9 @@ export default function Sidebar() {
             )}
           />
           Profile
-          <div
-            className={cn('block', {
-              'bg-primary ml-auto h-1.5 w-1.5 rounded-full': location.pathname === '/profile',
-            })}
-            aria-hidden='true'
-          />
+          {location.pathname === profilePath && (
+            <div className='bg-primary ml-auto h-1.5 w-1.5 rounded-full' aria-hidden='true' />
+          )}
         </Link>
         <Link
           to='/signin'
