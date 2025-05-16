@@ -14,7 +14,7 @@ export default function Sidebar() {
     'group text-muted-foreground hover:bg-muted hover:text-foreground flex items-center rounded-md px-3 py-4 text-sm font-medium transition-all'
 
   return (
-    <aside className='border-sidebar fixed hidden h-screen w-64 flex-col border-r md:flex'>
+    <aside className='border-sidebar fixed hidden h-screen w-64 flex-col overflow-auto border-r md:flex'>
       {/* Logo */}
       <div className='flex cursor-pointer items-center p-6' onClick={() => navigate('/')}>
         <div className='from-secondary to-primary/90 flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br'>
