@@ -1,3 +1,3 @@
 export default function ProfilePage() {
-  return <div>ProfilePage</div>
+  return <div>This is a test for the profile page </div>
 }
