@@ -4,11 +4,21 @@ import { Avatar, AvatarFallback } from '@radix-ui/react-avatar'
 import { Link, useNavigate } from 'react-router'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem } from '../ui/dropdown-menu'
 import { DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu'
+import { cn } from '@/lib/utils'
+import { useHideOnScroll } from '../hooks/useHideOnScroll'
 export default function TopBar() {
+  const hidden = useHideOnScroll(35)
   const navigate = useNavigate()
 
   return (
-    <div className='bg-background border-sidebar fixed top-0 right-0 left-0 z-50 flex h-16 items-center justify-between border-b px-6 md:hidden'>
+    <div
+      className={cn(
+        `bg-background border-sidebar ? : fixed top-0 right-0 left-0 z-50 flex h-16 translate-y-0 items-center justify-between border-b px-6 transition-transform md:hidden`,
+        {
+          '-translate-y-full': hidden,
+        }
+      )}
+    >
       <Link className='cursor-pointer' to={'/'}>
         <div className='flex items-center'>
           <div className='from-secondary to-primary/90 flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br'>
