@@ -57,14 +57,14 @@ export default function UsersPage() {
 
   return (
     <div className='mx-auto max-w-4xl'>
-      <div className='flex flex-col gap-8'>
+      <div className='flex flex-col gap-4 md:gap-8'>
         <h3 className='text-primary'>Users</h3>
         <div className='flex flex-wrap items-center justify-between gap-4'>
           <div className='relative flex w-full max-w-lg items-center gap-2'>
             <Search className='text-muted-foreground absolute top-1/2 left-4 h-5 w-5 -translate-y-1/2' />
             <Input
               type='text'
-              placeholder='Search users by name or username...'
+              placeholder='Search users by name or username'
               className='focus:ring-primary/30 rounded-full py-4 pl-12 focus:border-none focus:ring-1'
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
