@@ -46,7 +46,6 @@ export default function TopBar() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <button className='cursor-pointer'></button>
       </div>
     </div>
   )
