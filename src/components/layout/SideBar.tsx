@@ -16,11 +16,13 @@ export default function Sidebar() {
   return (
     <aside className='border-sidebar fixed hidden h-screen w-64 flex-col overflow-auto border-r md:flex'>
       {/* Logo */}
-      <div className='flex cursor-pointer items-center p-6' onClick={() => navigate('/')}>
-        <div className='from-secondary to-primary/90 flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br'>
-          <img src={logo} alt='Trendo Logo' className='p-1.25' />
+      <div className='flex items-center p-6'>
+        <div onClick={() => navigate('/')} className='flex cursor-pointer items-center'>
+          <div className='from-secondary to-primary/90 flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br'>
+            <img src={logo} alt='Trendo Logo' className='p-1.25' />
+          </div>
+          <span className='ml-3 text-lg font-medium tracking-tight'>trendo</span>
         </div>
-        <span className='ml-3 text-lg font-medium tracking-tight'>trendo</span>
       </div>
 
       {/* Profile */}
