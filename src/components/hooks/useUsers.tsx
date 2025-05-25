@@ -4,27 +4,28 @@ export type User = {
   username: string
   name: string
   status: 'online' | 'offline'
+  id: number
 }
 
 const initialUsers: User[] = [
-  { username: 'alice.johnson', name: 'Alice Johnson', status: 'online' },
-  { username: 'bobsmith', name: 'Bob Smith', status: 'offline' },
-  { username: 'charlied', name: 'Charlie Davis', status: 'online' },
-  { username: 'diana_e', name: 'Diana Evans', status: 'offline' },
-  { username: 'ethanbrown', name: 'Ethan Brown', status: 'online' },
-  { username: 'fiona.clark', name: 'Fiona Clark', status: 'offline' },
-  { username: 'george_m', name: 'George Miller', status: 'online' },
-  { username: 'hannahmoore', name: 'Hannah Moore', status: 'offline' },
-  { username: 'ian.w', name: 'Ian Wilson', status: 'online' },
-  { username: 'jasminelee', name: 'Jasmine Lee', status: 'offline' },
-  { username: 'kevinhall', name: 'Kevin Hall', status: 'online' },
-  { username: 'laura.s', name: 'Laura Scott', status: 'offline' },
-  { username: 'mike_a', name: 'Mike Adams', status: 'online' },
-  { username: 'nina.turner', name: 'Nina Turner', status: 'offline' },
-  { username: 'oscar_y', name: 'Oscar Young', status: 'online' },
-  { username: 'paulagreen', name: 'Paula Green', status: 'offline' },
-  { username: 'quinn.h', name: 'Quinn Harris', status: 'online' },
-  { username: 'rachbaker', name: 'Rachel Baker', status: 'offline' },
+  { username: 'alice.johnson', name: 'Alice Johnson', status: 'online', id: 1 },
+  { username: 'bobsmith', name: 'Bob Smith', status: 'offline', id: 2 },
+  { username: 'charlied', name: 'Charlie Davis', status: 'online', id: 3 },
+  { username: 'diana_e', name: 'Diana Evans', status: 'offline', id: 4 },
+  { username: 'ethanbrown', name: 'Ethan Brown', status: 'online', id: 5 },
+  { username: 'fiona.clark', name: 'Fiona Clark', status: 'offline', id: 6 },
+  { username: 'george_m', name: 'George Miller', status: 'online', id: 7 },
+  { username: 'hannahmoore', name: 'Hannah Moore', status: 'offline', id: 8 },
+  { username: 'ian.w', name: 'Ian Wilson', status: 'online', id: 9 },
+  { username: 'jasminelee', name: 'Jasmine Lee', status: 'offline', id: 10 },
+  { username: 'kevinhall', name: 'Kevin Hall', status: 'online', id: 11 },
+  { username: 'laura.s', name: 'Laura Scott', status: 'offline', id: 12 },
+  { username: 'mike_a', name: 'Mike Adams', status: 'online', id: 13 },
+  { username: 'nina.turner', name: 'Nina Turner', status: 'offline', id: 14 },
+  { username: 'oscar_y', name: 'Oscar Young', status: 'online', id: 15 },
+  { username: 'paulagreen', name: 'Paula Green', status: 'offline', id: 16 },
+  { username: 'quinn.h', name: 'Quinn Harris', status: 'online', id: 17 },
+  { username: 'rachbaker', name: 'Rachel Baker', status: 'offline', id: 18 },
 ]
 
 export function useUsers() {
