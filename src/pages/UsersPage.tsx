@@ -23,6 +23,7 @@ export default function UsersPage() {
   } = useUsers()
 
   return (
+    
     <div className='mx-auto max-w-4xl'>
       <div className='flex flex-col gap-4 md:gap-8'>
         <h3 className='text-primary'>Users</h3>
@@ -66,7 +67,7 @@ export default function UsersPage() {
           ) : (
             filteredUsers.map((user) => (
               <UserCard
-                key={user.username}
+                key={user.userId}
                 user={user}
                 isFollowed={followingUsers.includes(user.username)}
                 onToggleFollow={() => toggleFollow(user.username)}

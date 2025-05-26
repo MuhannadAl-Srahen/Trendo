@@ -29,6 +29,7 @@ export default function UserCard({ user, isFollowed, onToggleFollow }: UserCardP
       </Avatar>
       <div className='text-muted-foreground text-xs'>@{user.username}</div>
       <div className='text-primary text-lg font-semibold'>{user.name}</div>
+
       <div
         className={`text-xs font-medium ${
           user.status === 'online' ? 'text-green-500' : 'text-muted-foreground'

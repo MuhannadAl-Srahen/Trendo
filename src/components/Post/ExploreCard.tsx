@@ -74,12 +74,30 @@ export default function ExploreCard({ post, image }: ExploreCardProps) {
           </div>
 
           <div className='flex flex-row items-center gap-2'>
-            <div className='flex items-center gap-1'>
-              <Heart className='h-6 cursor-pointer' />
-              <p className='text-muted-foreground text-xs'>59</p>
-            </div>
-            <Bookmark className='h-6 cursor-pointer' />
-          </div>
+  <div className='flex items-center gap-1'>
+    <Heart
+      className='h-6 cursor-pointer'
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        // Handle like action here
+        console.log('Liked!')
+      }}
+    />
+    <p className='text-muted-foreground text-xs'>59</p>
+  </div>
+
+  <Bookmark
+    className='h-6 cursor-pointer'
+    onClick={(e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      // Handle bookmark action here
+      console.log('Saved!')
+    }}
+  />
+</div>
+
         </div>
       </div>
     </Link>

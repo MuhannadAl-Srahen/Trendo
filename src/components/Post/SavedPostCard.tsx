@@ -11,7 +11,7 @@ type Props = {
 export default function SavedPostCard({ postImage, postId, userId }: Props) {
   const { filteredUsers } = useUsers()
 
-  const user = filteredUsers.find((user) => user.id === userId)
+  const user = filteredUsers.find((user) => user.userId === userId)
 
   if (!user) {
     return null
