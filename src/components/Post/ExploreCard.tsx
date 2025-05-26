@@ -28,8 +28,7 @@ export default function ExploreCard({ post, image }: ExploreCardProps) {
   } = useExploreCard(post.username)
 
   return (
-    <Link to={`/post/${post.postId}`}>
-      <div className='group hover:border-primary/80 hover:bg-primary/10 flex cursor-pointer flex-col items-start justify-between gap-4 rounded-lg border transition-all duration-200'>
+    <Link to={`/post/${post.postId}`} className='group hover:border-primary/80 hover:bg-primary/10 flex cursor-pointer flex-col items-start justify-between gap-4 rounded-lg border transition-all duration-200'>
         {!image ? (
           <div className='m-auto flex aspect-square items-center justify-center text-gray-500'>
             No Image
@@ -99,7 +98,6 @@ export default function ExploreCard({ post, image }: ExploreCardProps) {
 </div>
 
         </div>
-      </div>
     </Link>
   )
 }
