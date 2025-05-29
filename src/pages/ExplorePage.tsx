@@ -11,19 +11,8 @@ import {
 } from '@/components/ui/dropdown-menu'
 import ExploreCard from '@/components/Post/ExploreCard'
 
-
-
 export default function ExplorePage() {
-  const {
-    searchQuery,
-    setSearchQuery,
-    position,
-    setPosition,
-    filteredUsers,
-  } = useExplore()
-
-
-
+  const { searchQuery, setSearchQuery, position, setPosition, filteredUsers } = useExplore()
 
   return (
     <div className='mx-auto max-w-4xl'>
@@ -68,11 +57,7 @@ export default function ExplorePage() {
             </h5>
           ) : (
             filteredUsers.map((post) => (
-              <ExploreCard
-                key={post.postId}
-                post={post}
-                image={post.image}
-              />
+              <ExploreCard key={post.postId} post={post} image={post.image} />
             ))
           )}
         </div>
