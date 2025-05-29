@@ -21,7 +21,7 @@ export default function Sidebar() {
           <div className='from-secondary to-primary/90 flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br'>
             <img src={logo} alt='Trendo Logo' className='p-1.25' />
           </div>
-          <span className='ml-3 text-lg font-medium tracking-tight'>trendo</span>
+          <span className='ml-3 text-xl font-medium tracking-tight'>trendo</span>
         </div>
       </div>
 

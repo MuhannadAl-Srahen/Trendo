@@ -23,7 +23,7 @@ export default function UsersPage() {
   } = useUsers()
 
   return (
-    <div className='mx-auto max-w-4xl'>
+    <div className='mx-auto max-w-5xl'>
       <div className='flex flex-col gap-4 md:gap-8'>
         <h3 className='text-primary'>Users</h3>
         <div className='flex flex-wrap items-center justify-between gap-4'>
@@ -58,15 +58,15 @@ export default function UsersPage() {
           </DropdownMenu>
         </div>
 
-        <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
-          {filteredUsers.length == 0 ? (
+        <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+          {filteredUsers.length === 0 ? (
             <h5 className='text-muted-foreground col-span-full py-12 text-center'>
               No users found
             </h5>
           ) : (
             filteredUsers.map((user) => (
               <UserCard
-                key={user.username}
+                key={user.userId}
                 user={user}
                 isFollowed={followingUsers.includes(user.username)}
                 onToggleFollow={() => toggleFollow(user.username)}
